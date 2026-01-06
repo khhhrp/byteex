@@ -1,0 +1,29 @@
+@use "../../styles/variables.scss" as v;
+
+.heroSection {
+  padding-top: 1.4rem;
+  padding-inline: 1.5rem;
+  display: grid;
+  justify-content: center;
+  row-gap: 1.3rem;
+}
+
+.heroSectionContent {
+  display: contents;
+}
+
+.heroSectionLogo {
+  margin-inline: auto;
+}
+
+.heroSectionTitle {
+  font-size: 2.2rem;
+  color: v.$blue;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-bottom: 0.4rem;
+
+  @media (width >= 428px) {
+    font-size: 2.6rem;
+  }
+}

@@ -15,20 +15,19 @@
   }
 }
 
-.mobileText,
-.desktopText {
+.topBannerText {
   font-size: 1.1rem;
   color: v.$gray;
   text-wrap-style: pretty;
 }
 
-.mobileText {
+.topBannerTextMobile {
   @media (width >= 768px) {
     display: none;
   }
 }
 
-.desktopText {
+.topBannerTextDesktop {
   display: none;
 
   @media (width >= 768px) {

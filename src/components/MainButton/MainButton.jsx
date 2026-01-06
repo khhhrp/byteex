@@ -4,7 +4,10 @@ const MainButton = (props) => {
   const { type, className, content } = props;
 
   return (
-    <button type={type} className={`${styles.mainBtn} ${className}`}>
+    <button
+      type={type}
+      className={`${styles.mainBtn} ${className || ""}`.trim()}
+    >
       {content}
     </button>
   );
