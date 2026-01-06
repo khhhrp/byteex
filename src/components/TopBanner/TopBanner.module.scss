@@ -1,0 +1,37 @@
+@use "../../styles/variables.scss" as v;
+
+.topBanner {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  min-height: 3.6rem;
+  background-color: v.$beige;
+  padding-block: 0.6rem;
+  padding-inline: 1.5rem;
+
+  @media (width >= 768px) {
+    padding-inline: 3rem;
+  }
+}
+
+.mobileText,
+.desktopText {
+  font-size: 1.1rem;
+  color: v.$gray;
+  text-wrap-style: pretty;
+}
+
+.mobileText {
+  @media (width >= 768px) {
+    display: none;
+  }
+}
+
+.desktopText {
+  display: none;
+
+  @media (width >= 768px) {
+    display: block;
+  }
+}
