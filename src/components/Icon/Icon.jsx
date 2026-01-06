@@ -1,8 +1,8 @@
 const Icon = (props) => {
-  const { name, size = 24, className = "" } = props;
+  const { name, size = 24 } = props;
 
   return (
-    <svg width={size} height={size} className={className}>
+    <svg width={size} height={size}>
       <use href={`#${name}`} />
     </svg>
   );

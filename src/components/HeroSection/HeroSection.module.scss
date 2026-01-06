@@ -6,24 +6,21 @@
   display: grid;
   justify-content: center;
   row-gap: 1.3rem;
-}
 
-.heroSectionContent {
-  display: contents;
-}
+  &__title {
+    font-size: 2.2rem;
+    color: v.$blue--900;
+    letter-spacing: 0.04em;
+    text-align: center;
+    margin-bottom: 0.4rem;
 
-.heroSectionLogo {
-  margin-inline: auto;
-}
+    @media (width >= 428px) {
+      font-size: 2.6rem;
+    }
+  }
 
-.heroSectionTitle {
-  font-size: 2.2rem;
-  color: v.$blue;
-  letter-spacing: 0.04em;
-  text-align: center;
-  margin-bottom: 0.4rem;
-
-  @media (width >= 428px) {
-    font-size: 2.6rem;
+  &__logo {
+    display: flex;
+    justify-content: center;
   }
 }

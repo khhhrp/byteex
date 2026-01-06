@@ -13,24 +13,10 @@
   @media (width >= 768px) {
     padding-inline: 3rem;
   }
-}
 
-.topBannerText {
-  font-size: 1.1rem;
-  color: v.$gray;
-  text-wrap-style: pretty;
-}
-
-.topBannerTextMobile {
-  @media (width >= 768px) {
-    display: none;
-  }
-}
-
-.topBannerTextDesktop {
-  display: none;
-
-  @media (width >= 768px) {
-    display: block;
+  &__text {
+    font-size: 1.1rem;
+    color: v.$gray--900;
+    text-wrap-style: pretty;
   }
 }

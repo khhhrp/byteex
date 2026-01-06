@@ -8,91 +8,95 @@ $gap: 0.4rem;
   justify-content: center;
   min-height: 22rem;
   column-gap: $gap;
-}
 
-.collageDecor {
-  width: 5rem;
-  height: 10rem;
-  background-color: v.$beige;
+  &::before,
+  &::after {
+    content: "";
+    width: 5rem;
+    height: 10rem;
+    background-color: v.$beige;
 
-  &:first-child {
+    @media (width >= 428px) {
+      width: 7rem;
+    }
+
+    @media (width >= 768px) {
+      width: 10rem;
+      height: 14.5rem;
+    }
+
+    @media (width >= 1024px) {
+      width: 13.4rem;
+      height: 19rem;
+    }
+  }
+
+  &::before {
     margin-right: -$gap;
     translate: 50%;
   }
-  &:last-child {
+
+  &::after {
     margin-left: -$gap;
     translate: -50%;
   }
 
-  @media (width >= 428px) {
-    width: 7rem;
-  }
-
-  @media (width >= 768px) {
+  &__item {
+    position: relative;
+    height: 22rem;
     width: 10rem;
-    height: 14.5rem;
-  }
+    z-index: 1;
 
-  @media (width >= 1024px) {
-    width: 13.4rem;
-    height: 19rem;
-  }
-}
-
-.collageItem {
-  position: relative;
-  height: 22rem;
-  width: 10rem;
-  z-index: 1;
-
-  &:nth-child(2),
-  &:nth-child(4) {
-    height: 16.6rem;
-    width: 8.6rem;
-    width: 6rem;
-  }
-
-  @media (width >= 428px) {
-    width: 13.6rem;
-
-    &:nth-child(2),
-    &:nth-child(4) {
+    &:first-child,
+    &:last-child {
+      height: 16.6rem;
       width: 8.6rem;
+      width: 6rem;
+    }
+
+    @media (width >= 428px) {
+      width: 13.6rem;
+
+      &:first-child,
+      &:last-child {
+        width: 8.6rem;
+      }
+    }
+
+    @media (width >= 768px) {
+      width: 19rem;
+      height: 32rem;
+
+      &:first-child,
+      &:last-child {
+        width: 15.5rem;
+        height: 24rem;
+      }
+    }
+
+    @media (width >= 1024px) {
+      width: 26rem;
+      height: 42.2rem;
+
+      &:first-child,
+      &:last-child {
+        width: 21rem;
+        height: 31.6rem;
+      }
     }
   }
 
-  @media (width >= 768px) {
-    width: 19rem;
-    height: 32rem;
-
-    &:nth-child(2),
-    &:nth-child(4) {
-      width: 15.5rem;
-      height: 24rem;
-    }
+  &::before,
+  &::after,
+  &__item {
+    flex-shrink: 0;
   }
 
-  @media (width >= 1024px) {
-    width: 26rem;
-    height: 42.2rem;
-
-    &:nth-child(2),
-    &:nth-child(4) {
-      width: 21rem;
-      height: 31.6rem;
-    }
+  &__img {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
-}
-
-.collageDecor,
-.collageItem {
-  flex-shrink: 0;
-}
-
-.collageImg {
-  display: block;
-  max-width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }

@@ -1,15 +1,10 @@
 import styles from "./Logo.module.scss";
+import logo from "../../../src/assets/icons/logo.svg";
 
-const Logo = (props) => {
-  const { className } = props;
-
+const Logo = () => {
   return (
-    <a href="/" className={`${styles.logo} ${className || ""}`.trim()}>
-      <img
-        src="../../../src/assets/icons/logo.svg"
-        alt="logo"
-        className={styles.logoImg}
-      />
+    <a href="/" className={styles.logo}>
+      <img src={logo} alt="logo" className={styles.logo__img} />
     </a>
   );
 };
