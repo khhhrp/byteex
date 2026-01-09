@@ -5,9 +5,12 @@
   flex-direction: column;
   row-gap: 2.6rem;
 
+  @media (width >= 1024px) {
+    row-gap: 2rem;
+  }
+
   &__item {
     display: flex;
-    align-items: center;
     column-gap: 1.3rem;
   }
 
@@ -21,5 +24,18 @@
     justify-content: center;
     background-color: v.$beige;
     color: v.$blue--700;
+    align-self: flex-start;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    color: v.$gray--700;
+    flex-grow: 1;
+
+    @media (width >= 768px) {
+      font-size: 1.5rem;
+    }
   }
 }

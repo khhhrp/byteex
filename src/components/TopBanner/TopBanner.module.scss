@@ -8,11 +8,6 @@
   min-height: 3.6rem;
   background-color: v.$beige;
   padding-block: 0.6rem;
-  padding-inline: 1.5rem;
-
-  @media (width >= 768px) {
-    padding-inline: 3rem;
-  }
 
   &__text {
     font-size: 1.1rem;

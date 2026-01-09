@@ -1,0 +1,116 @@
+@use "../../styles/variables.scss" as v;
+
+.benefitsSection {
+  position: relative;
+  padding-top: 8rem;
+  padding-inline: 2rem;
+  min-height: 100dvh;
+  background-image: linear-gradient(
+    to top,
+    v.$beige 0%,
+    rgba(v.$beige, 0.18) 10%,
+    transparent
+  );
+  background-size: 100% 76rem;
+  background-position: center calc(100% + 157px);
+  background-repeat: no-repeat;
+
+  @media (width >= 768px) {
+    padding-top: 10rem;
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='428' height='595' fill='none'%3E%3Cpath fill='url(%23a)' d='M428.984 595H.852V40.202C-30.314 24.174.852.096.852.096v40.106c15.549 7.997 46.613 13.99 104.803 13.99 174.826 0 217.949-56.832 323.481-54.096C534.669 2.832 428.984 595 428.984 595Z'/%3E%3Cdefs%3E%3ClinearGradient id='a' x1='214.917' x2='214.917' y1='-46.424' y2='595' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23F9F0E5'/%3E%3Cstop offset='.43' stop-color='%23F9F0E5' stop-opacity='.18'/%3E%3Cstop offset='1' stop-color='%23F9F0E5' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    z-index: -1;
+
+    @media (width >= 768px) {
+      background-image: linear-gradient(
+        to bottom,
+        v.$beige 0%,
+        rgba(v.$beige, 0.18) 43%,
+        transparent
+      );
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    color: v.$gray--400;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    @media (width >= 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  &__title {
+    font-size: 2.2rem;
+    color: v.$blue--900;
+    letter-spacing: 0.04em;
+    text-align: center;
+    margin-bottom: 0.4rem;
+
+    @media (width >= 428px) {
+      font-size: 2.6rem;
+    }
+
+    @media (width >= 768px) {
+      font-size: 2.8rem;
+    }
+
+    @media (width >= 1024px) {
+      font-size: 3.2rem;
+      text-align: start;
+    }
+  }
+
+  &__slider {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 1.3rem;
+    color: v.$gray--700;
+    letter-spacing: 0.03em;
+    padding-top: 0.7rem;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2rem;
+    row-gap: 3rem;
+  }
+
+  &__card {
+    & + & {
+      padding-top: 3rem;
+      border-top: 0.1rem solid rgba(v.$gray--300, 0.5);
+    }
+
+    @media (width >= 768px) {
+      & + & {
+        border-top: none;
+        padding-top: 0;
+      }
+    }
+  }
+}

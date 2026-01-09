@@ -1,4 +1,46 @@
 @use "/src/styles/variables.scss" as v;
 
 .mainBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 38rem;
+  width: 100%;
+  column-gap: 1rem;
+  border: none;
+  padding: 0 1.6rem;
+  height: 5.6rem;
+  background-color: v.$blue--900;
+  color: v.$light;
+  border-radius: 0.5rem;
+  transition-property: background-color, translate;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+
+  @media (hover: hover) {
+    cursor: pointer;
+
+    &:hover {
+      background-color: v.$blue--400;
+    }
+  }
+
+  &:active {
+    translate: 0 0.5rem;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
 }

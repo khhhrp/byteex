@@ -1,0 +1,67 @@
+@use "../../styles/variables.scss" as v;
+
+.benefitCard {
+  max-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  align-items: center;
+  text-align: center;
+  padding-inline: 2.5rem;
+
+  @media (width >= 428px) {
+    max-width: 33.4rem;
+    padding-inline: 4.5rem;
+  }
+
+  @media (width >= 768px) {
+    display: grid;
+    text-align: start;
+    grid-template-columns: min-content 1fr;
+    row-gap: 1.4rem;
+    column-gap: 3.2rem;
+    max-width: 57rem;
+    padding-inline: 0;
+  }
+
+  &__circle {
+    width: 4.2rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: v.$beige;
+    color: v.$blue--700;
+
+    @media (width >= 768px) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+    color: v.$blue--900;
+
+    @media (width >= 768px) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      font-size: 2.2rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    letter-spacing: 0.03em;
+    color: v.$gray--700;
+
+    @media (width >= 768px) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      font-size: 1.5rem;
+    }
+  }
+}
