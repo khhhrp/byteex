@@ -1,26 +1,23 @@
 @use "../../styles/variables.scss" as v;
 
 .benefitCard {
-  max-width: 25rem;
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
   text-align: center;
-  padding-inline: 2.5rem;
+  padding-inline: 2rem;
 
   @media (width >= 428px) {
-    max-width: 33.4rem;
-    padding-inline: 4.5rem;
+    padding-inline: 4rem;
   }
 
-  @media (width >= 768px) {
+  @media (width >= 1024px) {
     display: grid;
     text-align: start;
     grid-template-columns: min-content 1fr;
     row-gap: 1.4rem;
     column-gap: 3.2rem;
-    max-width: 57rem;
     padding-inline: 0;
   }
 

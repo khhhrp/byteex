@@ -10,6 +10,7 @@ const Slider = (props) => {
     showPagination = false,
     onSlideChange,
     children,
+    controlBtns = false,
   } = props;
 
   const [slideIndex, setSlideIndex] = useState(startIndex);
@@ -33,12 +34,16 @@ const Slider = (props) => {
   return (
     <div className={styles.slider}>
       <div className={styles.slider__main}>{children}</div>
-      <button type="button" onClick={onNextButtonClick}>
-        next
-      </button>
-      <button type="button" onClick={onPrevButtonClick}>
-        prev
-      </button>
+      {controlBtns && (
+        <>
+          <button type="button" onClick={onNextButtonClick}>
+            next
+          </button>
+          <button type="button" onClick={onPrevButtonClick}>
+            prev
+          </button>
+        </>
+      )}
       {showPagination && (
         <div className={styles.slider__pagintation}>
           {items.map((el, index) => {

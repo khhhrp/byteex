@@ -6,7 +6,8 @@
   "scripts": {
     "start": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "rc": "node generate-component.js"
   },
   "dependencies": {
     "react": "^19.1.0",

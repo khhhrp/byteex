@@ -2,8 +2,7 @@ import BenefitsSection from "./components/BenefitsSection/BenefitsSection";
 import HeroSection from "./components/HeroSection/HeroSection";
 // import Slider from "./components/Slider/Slider";
 // import { useState } from "react";
-// import { images, cards } from "./components/Slider/staticContent";
-
+import { images, cards } from "./components/Slider/staticContent";
 import SvgSprite from "./components/SvgSprite/SvgSprite";
 import TopBanner from "./components/TopBanner/TopBanner";
 import { getContent } from "./components/TopBanner/staticContent";
@@ -37,8 +36,8 @@ const App = () => {
           <h2>{card.title}</h2>
           <p>{card.text}</p>
         </div>
-      </Slider>
-      <Slider
+      </Slider> */}
+      {/* <Slider
         startIndex={1}
         onSlideChange={(index) => setSlideIndexImages(index)}
         items={images}

@@ -2,7 +2,7 @@ import styles from "./MainButton.module.scss";
 import Icon from "../Icon/Icon";
 
 const MainButton = (props) => {
-  const { type, children } = props;
+  const { type, children, withRaiting = false } = props;
 
   return (
     <button type={type} className={styles.mainBtn}>

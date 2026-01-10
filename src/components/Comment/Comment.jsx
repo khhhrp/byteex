@@ -1,8 +1,6 @@
 import styles from "./Comment.module.scss";
 import Icon from "../Icon/Icon";
-import { img } from "./staticContent";
-
-const starsArr = new Array(5).fill(null);
+import { img, starsArr } from "./staticContent";
 
 const Comment = (props) => {
   const { avatarImg = img, text, name } = props;

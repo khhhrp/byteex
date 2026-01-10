@@ -16,3 +16,5 @@ export const content = {
 export const getContent = (isMobile) => {
   return isMobile ? content.mobile : content.desktop;
 };
+
+export const starsArr = new Array(5).fill(null);

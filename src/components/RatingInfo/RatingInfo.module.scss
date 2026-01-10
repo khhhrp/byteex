@@ -1,0 +1,22 @@
+@use "../../styles/variables" as v;
+
+.ratingInfo {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+  row-gap: 0.5rem;
+  max-width: 40rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__stars {
+    flex-shrink: 0;
+    color: v.$yellow;
+  }
+
+  &__text {
+    font-size: 1.2rem;
+    color: v.$gray--500;
+    text-align: center;
+  }
+}
