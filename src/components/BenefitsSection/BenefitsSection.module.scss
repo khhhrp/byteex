@@ -109,6 +109,8 @@
   &__slider {
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: 100%;
 
     @media (width >= 1024px) {
       grid-column: 2;
@@ -123,7 +125,8 @@
 
     @media (width >= 1024px) {
       display: grid;
-      grid-template-columns: 43.8461% 1fr;
+      grid-template-columns: 1fr 40.7692%;
+      column-gap: 18.7rem;
     }
   }
 
@@ -137,6 +140,7 @@
     @media (width >= 1024px) {
       grid-column: 2;
       grid-row: 3;
+      padding-top: 1.3rem;
     }
   }
 

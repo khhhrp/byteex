@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
 import styles from "./Slider.module.scss";
-import PaginationButton from "./PaginationButton";
+import { useEffect, useState } from "react";
+import PaginationButton from "../PaginationButton/PaginationButton";
 import { getSlide } from "./utils";
+import cx from "classnames";
+import Icon from "../Icon/Icon";
 
 const Slider = (props) => {
   const {
@@ -10,7 +12,6 @@ const Slider = (props) => {
     showPagination = false,
     onSlideChange,
     children,
-    controlBtns = false,
   } = props;
 
   const [slideIndex, setSlideIndex] = useState(startIndex);
@@ -34,16 +35,20 @@ const Slider = (props) => {
   return (
     <div className={styles.slider}>
       <div className={styles.slider__main}>{children}</div>
-      {controlBtns && (
-        <>
-          <button type="button" onClick={onNextButtonClick}>
-            next
-          </button>
-          <button type="button" onClick={onPrevButtonClick}>
-            prev
-          </button>
-        </>
-      )}
+      <button
+        type="button"
+        onClick={onNextButtonClick}
+        className={cx(styles.slider__btn, styles.slider__btn_next)}
+      >
+        <Icon name="carrot-right" size="15" />
+      </button>
+      <button
+        type="button"
+        onClick={onPrevButtonClick}
+        className={cx(styles.slider__btn, styles.slider__btn_prev)}
+      >
+        <Icon name="carrot-left" size="15" />
+      </button>
       {showPagination && (
         <div className={styles.slider__pagintation}>
           {items.map((el, index) => {
