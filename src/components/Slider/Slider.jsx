@@ -1,5 +1,5 @@
 import styles from "./Slider.module.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 import PaginationButton from "../PaginationButton/PaginationButton";
 import { getSlide } from "./utils";
 import cx from "classnames";
@@ -34,7 +34,9 @@ const Slider = (props) => {
 
   return (
     <div className={styles.slider}>
-      <div className={styles.slider__main}>{children}</div>
+      <div className={styles.slider__main}>
+        <Fragment key={slideIndex}>{children}</Fragment>
+      </div>
       <button
         type="button"
         onClick={onNextButtonClick}

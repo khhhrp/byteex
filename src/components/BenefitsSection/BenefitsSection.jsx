@@ -30,7 +30,7 @@ const BenefitsSection = (props) => {
               items={images}
               showPagination
             >
-              <img src={img} alt="" key={slideIndexImages} />
+              <img src={img} alt="" />
             </Slider>
           </div>
           <p className={styles.benefitsSection__text}>White Robe</p>

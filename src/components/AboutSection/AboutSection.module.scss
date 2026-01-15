@@ -1,0 +1,76 @@
+@use "../../styles/variables" as v;
+
+.aboutSection {
+  background-color: v.$light-gray--100;
+  padding-top: 4rem;
+  padding-bottom: 5.4rem;
+
+  &__wrapper {
+    padding-inline: 1.8rem;
+  }
+
+  &__title {
+    font-size: 2.6rem;
+    text-align: center;
+    color: v.$blue--400;
+    padding-bottom: 5rem;
+  }
+
+  &__gallery {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 54rem;
+    aspect-ratio: 1;
+    margin-inline: auto;
+
+    img {
+      display: block;
+      width: 70%;
+      height: 90%;
+      object-fit: cover;
+    }
+  }
+
+  &__item {
+    position: absolute;
+    width: 32%;
+    aspect-ratio: 1;
+
+    img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      margin-inline: auto;
+      border: 0.4rem solid v.$light-gray--100;
+    }
+
+    &:first-child {
+      top: 0;
+      left: 15%;
+      translate: -50%;
+    }
+
+    &:last-child {
+      bottom: 0;
+      right: 15%;
+      translate: 50%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    padding-inline: 1rem;
+  }
+
+  &__text {
+    color: v.$gray--600;
+    font-size: 1.5rem;
+  }
+}

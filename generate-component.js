@@ -28,7 +28,7 @@ fs.mkdirSync(componentPath, { recursive: true });
 // JSX
 fs.writeFileSync(
   path.join(componentPath, `${componentName}.jsx`),
-  `import styles from './${componentName}.module.scss';
+  `import styles from "./${componentName}.module.scss";
 
 const ${componentName} = (props) => {
   const {} = props;
