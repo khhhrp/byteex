@@ -1,8 +1,9 @@
 import styles from "./MainButton.module.scss";
-import Icon from "../Icon/Icon";
+import { Icon } from "../Icon/Icon";
+import { memo } from "react";
 
-const MainButton = (props) => {
-  const { type, children, withRaiting = false } = props;
+export const MainButton = memo((props) => {
+  const { type = "button", children = "Customize Your Outfit" } = props;
 
   return (
     <button type={type} className={styles.mainBtn}>
@@ -12,6 +13,4 @@ const MainButton = (props) => {
       </div>
     </button>
   );
-};
-
-export default MainButton;
+});

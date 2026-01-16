@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "checkJs": true,
+    "types": ["vite/client"]
+  },
+  "exclude": ["node_modules", "**/node_modules/*"]
+}

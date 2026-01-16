@@ -1,7 +1,7 @@
+import { Container } from "../Container/Container";
 import styles from "./TopBanner.module.scss";
-import Container from "../Container/Container";
 
-const TopBanner = (props) => {
+export const TopBanner = (props) => {
   const { text } = props;
 
   return (
@@ -12,5 +12,3 @@ const TopBanner = (props) => {
     </div>
   );
 };
-
-export default TopBanner;

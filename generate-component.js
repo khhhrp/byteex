@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import fs from "fs";
 import path from "path";
 
@@ -30,14 +31,12 @@ fs.writeFileSync(
   path.join(componentPath, `${componentName}.jsx`),
   `import styles from "./${componentName}.module.scss";
 
-const ${componentName} = (props) => {
+export const ${componentName} = (props) => {
   const {} = props;
 
   return <div className={styles.${className}}></div>;
 };
-
-export default ${componentName};
-`,
+`
 );
 
 // SCSS
@@ -46,7 +45,7 @@ fs.writeFileSync(
   `.${className} {
 
 }
-`,
+`
 );
 
 console.log(`✅ Компонент ${componentName}  создан`);

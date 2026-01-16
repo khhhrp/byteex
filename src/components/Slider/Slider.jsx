@@ -1,42 +1,39 @@
-import styles from "./Slider.module.scss";
-import { useEffect, useState, Fragment } from "react";
-import PaginationButton from "../PaginationButton/PaginationButton";
-import { getSlide } from "./utils";
 import cx from "classnames";
-import Icon from "../Icon/Icon";
+import { memo, useCallback, useEffect, useId, useState } from "react";
+import { Icon } from "../Icon/Icon";
+import { PaginationButton } from "../PaginationButton/PaginationButton";
+import styles from "./Slider.module.scss";
+import { getSlide } from "./utils";
 
-const Slider = (props) => {
+export const Slider = memo((props) => {
   const {
     items = [],
     startIndex = 0,
     showPagination = false,
     onSlideChange,
-    children,
+    children
   } = props;
 
+  const id = useId();
+
   const [slideIndex, setSlideIndex] = useState(startIndex);
+  const { next, prev } = getSlide(slideIndex, items.length - 1);
 
   useEffect(() => {
     onSlideChange(slideIndex);
-  }, []);
+  }, [onSlideChange, slideIndex]);
 
-  const { next, prev } = getSlide(slideIndex, items.length - 1);
-
-  const onNextButtonClick = () => {
+  const onNextButtonClick = useCallback(() => {
     setSlideIndex(next);
-    onSlideChange(slideIndex);
-  };
+  }, [next]);
 
-  const onPrevButtonClick = () => {
+  const onPrevButtonClick = useCallback(() => {
     setSlideIndex(prev);
-    onSlideChange(slideIndex);
-  };
+  }, [prev]);
 
   return (
     <div className={styles.slider}>
-      <div className={styles.slider__main}>
-        <Fragment key={slideIndex}>{children}</Fragment>
-      </div>
+      <div className={styles.slider__main}>{children}</div>
       <button
         type="button"
         onClick={onNextButtonClick}
@@ -60,9 +57,9 @@ const Slider = (props) => {
                 isActive={index === slideIndex}
                 onClick={() => {
                   setSlideIndex(index);
-                  onSlideChange(slideIndex);
                 }}
                 src={el}
+                id={id}
               />
             );
           })}
@@ -70,6 +67,4 @@ const Slider = (props) => {
       )}
     </div>
   );
-};
-
-export default Slider;
+});

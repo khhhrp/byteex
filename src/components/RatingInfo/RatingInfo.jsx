@@ -1,8 +1,9 @@
 import styles from "./RatingInfo.module.scss";
-import Icon from "../Icon/Icon";
+import { Icon } from "../Icon/Icon";
 import { starsArr } from "../Comment/staticContent";
+import { memo } from "react";
 
-const RatingInfo = (props) => {
+export const RatingInfo = memo((props) => {
   const { text = "Over 500+ 5 Star Reviews Online" } = props;
 
   return (
@@ -15,6 +16,4 @@ const RatingInfo = (props) => {
       <div className={styles.ratingInfo__text}>{text}</div>
     </div>
   );
-};
-
-export default RatingInfo;
+});

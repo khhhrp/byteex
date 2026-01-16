@@ -1,8 +1,8 @@
 import styles from "./HeroInfo.module.scss";
-import Icon from "../Icon/Icon";
+import { Icon } from "../Icon/Icon";
 // import { useState } from "react";
 
-const HeroInfo = (props) => {
+export const HeroInfo = (props) => {
   const { items = [] } = props;
   // const [isOpen, setIsOpen] = useState(items);
   // const [isItems, setIsItems] = useState(false);
@@ -38,5 +38,3 @@ const HeroInfo = (props) => {
     </div>
   );
 };
-
-export default HeroInfo;

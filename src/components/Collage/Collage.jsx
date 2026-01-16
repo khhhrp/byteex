@@ -2,7 +2,7 @@ import styles from "./Collage.module.scss";
 
 const imagesCount = 3;
 
-const Collage = (props) => {
+export const Collage = (props) => {
   const { images = [] } = props;
 
   if (images.length < imagesCount) {
@@ -23,5 +23,3 @@ const Collage = (props) => {
     </div>
   );
 };
-
-export default Collage;

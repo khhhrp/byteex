@@ -1,8 +1,8 @@
 import styles from "./Comment.module.scss";
-import Icon from "../Icon/Icon";
+import { Icon } from "../Icon/Icon";
 import { img, starsArr } from "./staticContent";
 
-const Comment = (props) => {
+export const Comment = (props) => {
   const { avatarImg = img, text, name } = props;
 
   return (
@@ -23,5 +23,3 @@ const Comment = (props) => {
     </article>
   );
 };
-
-export default Comment;

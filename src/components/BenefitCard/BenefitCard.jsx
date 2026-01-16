@@ -1,7 +1,8 @@
-import Icon from "../Icon/Icon";
+import { Icon } from "../Icon/Icon";
 import styles from "./BenefitCard.module.scss";
+import { memo } from "react";
 
-const BenefitCard = (props) => {
+export const BenefitCard = memo((props) => {
   const { icon, size, title, text } = props;
 
   return (
@@ -13,6 +14,4 @@ const BenefitCard = (props) => {
       <p className={styles.benefitCard__text}>{text}</p>
     </article>
   );
-};
-
-export default BenefitCard;
+});

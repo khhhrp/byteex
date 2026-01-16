@@ -1,4 +1,4 @@
-const SvgSprite = () => {
+export const SvgSprite = () => {
   return (
     <svg width="0" height="0" className="visuallyHidden">
       <symbol
@@ -290,5 +290,3 @@ const SvgSprite = () => {
     </svg>
   );
 };
-
-export default SvgSprite;

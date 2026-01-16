@@ -1,4 +1,6 @@
-const Icon = (props) => {
+import { memo } from "react";
+
+export const Icon = memo((props) => {
   const { name, size = 24 } = props;
 
   return (
@@ -6,6 +8,4 @@ const Icon = (props) => {
       <use href={`#${name}`} />
     </svg>
   );
-};
-
-export default Icon;
+});
