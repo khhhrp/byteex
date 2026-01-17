@@ -1,11 +1,25 @@
 import cx from "classnames";
-import { memo, useCallback, useEffect, useId, useState } from "react";
+import {
+  memo,
+  useCallback,
+  useEffect,
+  useId,
+  useState,
+  type PropsWithChildren
+} from "react";
 import { Icon } from "../Icon/Icon";
-import { PaginationButton } from "../PaginationButton/PaginationButton";
 import styles from "./Slider.module.scss";
 import { getSlide } from "./utils";
+import { PaginationButton } from "../PaginationButton/PaginationButton";
 
-export const Slider = memo((props) => {
+type Props = {
+  items: string[];
+  startIndex?: number;
+  showPagination?: boolean;
+  onSlideChange: (index: number) => void;
+} & PropsWithChildren;
+
+export const Slider = memo((props: Props) => {
   const {
     items = [],
     startIndex = 0,
@@ -16,7 +30,7 @@ export const Slider = memo((props) => {
 
   const id = useId();
 
-  const [slideIndex, setSlideIndex] = useState(startIndex);
+  const [slideIndex, setSlideIndex] = useState<number>(startIndex);
   const { next, prev } = getSlide(slideIndex, items.length - 1);
 
   useEffect(() => {

@@ -1,10 +1,10 @@
 import { useMediaQuery } from "react-responsive";
-import { AboutSection } from "./components/AboutSection/AboutSection";
-import { BenefitsSection } from "./components/BenefitsSection/BenefitsSection";
-import { HeroSection } from "./components/HeroSection/HeroSection";
 import { SvgSprite } from "./components/SvgSprite/SvgSprite";
-import { TopBanner } from "./components/TopBanner/TopBanner";
 import { getContent } from "./components/TopBanner/staticContent";
+import { TopBanner } from "./components/TopBanner/TopBanner";
+import { HeroSection } from "./components/HeroSection/HeroSection";
+import { BenefitsSection } from "./components/BenefitsSection/BenefitsSection";
+import { AboutSection } from "./components/AboutSection/AboutSection";
 
 export const App = () => {
   const isMobile = useMediaQuery({

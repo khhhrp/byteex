@@ -2,7 +2,13 @@ import styles from "./Comment.module.scss";
 import { Icon } from "../Icon/Icon";
 import { img, starsArr } from "./staticContent";
 
-export const Comment = (props) => {
+type Props = {
+  avatarImg?: string;
+  text: string;
+  name: string;
+};
+
+export const Comment = (props: Props) => {
   const { avatarImg = img, text, name } = props;
 
   return (

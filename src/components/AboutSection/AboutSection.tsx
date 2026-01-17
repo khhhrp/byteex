@@ -1,13 +1,22 @@
-import { Container } from "../Container/Container";
-import { MainButton } from "../MainButton/MainButton";
-import styles from "./AboutSection.module.scss";
+import { memo } from "react";
+import { useMediaQuery } from "react-responsive";
 import hero01 from "../../assets/images/hero01.webp";
 import hero02 from "../../assets/images/hero02.webp";
 import hero04 from "../../assets/images/hero04.webp";
+import { Container } from "../Container/Container";
+import styles from "./AboutSection.module.scss";
 import { content } from "./staticContent";
-import { memo } from "react";
+import { AboutSectionContent } from "./AboutSectionContent";
 
-export const AboutSection = memo((props) => {
+type Props = {
+  leftImg?: string;
+  mainImg?: string;
+  rightImg?: string;
+  title?: string;
+  text?: string;
+};
+
+export const AboutSection = memo((props: Props) => {
   const {
     leftImg = hero01,
     mainImg = hero02,
@@ -15,6 +24,10 @@ export const AboutSection = memo((props) => {
     title = content.title,
     text = content.text
   } = props;
+
+  const isMobile = useMediaQuery({
+    query: "(max-width: 767px)"
+  });
 
   return (
     <div className={styles.aboutSection}>
@@ -29,13 +42,13 @@ export const AboutSection = memo((props) => {
               <img src={rightImg} alt="" />
             </div>
           </div>
-          <div className={styles.aboutSection__content}>
-            <h2 className={styles.aboutSection__title}>{title}</h2>
-            <p className={styles.aboutSection__text}>{text}</p>
-            <div className={styles.aboutSection__btn}>
-              <MainButton />
+          {isMobile ? (
+            <AboutSectionContent title={title} text={text} />
+          ) : (
+            <div className={styles.aboutSection__content}>
+              <AboutSectionContent title={title} text={text} />
             </div>
-          </div>
+          )}
         </div>
       </Container>
     </div>

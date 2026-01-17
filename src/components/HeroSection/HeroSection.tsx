@@ -1,13 +1,13 @@
+import { useMediaQuery } from "react-responsive";
+import { Container } from "../Container/Container";
 import styles from "./HeroSection.module.scss";
 import { Logo } from "../Logo/Logo";
+import { getContent } from "../Comment/staticContent";
+import { images, items } from "./staticContent";
 import { Collage } from "../Collage/Collage";
 import { HeroInfo } from "../HeroInfo/HeroInfo";
-import { MainButton } from "../MainButton/MainButton";
 import { Comment } from "../Comment/Comment";
-import { Container } from "../Container/Container";
-import { images, items } from "./staticContent";
-import { useMediaQuery } from "react-responsive";
-import { getContent } from "../Comment/staticContent";
+import { MainButton } from "../MainButton/MainButton";
 
 export const HeroSection = () => {
   const isMobile = useMediaQuery({
@@ -31,7 +31,7 @@ export const HeroSection = () => {
               <HeroInfo items={items} />
             </div>
             <div className={styles.heroSection__btn}>
-              <MainButton>Customize Your Outfit</MainButton>
+              <MainButton />
             </div>
           </div>
           <div className={styles.heroSection__collage}>

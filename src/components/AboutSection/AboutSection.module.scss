@@ -18,13 +18,9 @@
   }
 
   &__content {
-    display: contents;
-
-    @media (width >= 1024px) {
-      display: flex;
-      flex-direction: column;
-      row-gap: 3rem;
-    }
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
   }
 
   &__title {
@@ -49,6 +45,7 @@
     aspect-ratio: 1;
     margin-inline: auto;
     flex-shrink: 0;
+    width: 100%;
 
     img {
       display: block;

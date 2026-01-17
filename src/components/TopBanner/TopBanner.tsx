@@ -1,7 +1,11 @@
 import { Container } from "../Container/Container";
 import styles from "./TopBanner.module.scss";
 
-export const TopBanner = (props) => {
+type Props = {
+  text: string;
+};
+
+export const TopBanner = (props: Props) => {
   const { text } = props;
 
   return (

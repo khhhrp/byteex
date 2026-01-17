@@ -1,8 +1,12 @@
 import styles from "./Collage.module.scss";
 
-const imagesCount = 3;
+const imagesCount: number = 3;
 
-export const Collage = (props) => {
+type Props = {
+  images: string[];
+};
+
+export const Collage = (props: Props) => {
   const { images = [] } = props;
 
   if (images.length < imagesCount) {
