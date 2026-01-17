@@ -1,4 +1,4 @@
-type Content = {
+export type Content = {
   mobile: string;
   desktop: string;
 };

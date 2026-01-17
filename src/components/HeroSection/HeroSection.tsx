@@ -10,7 +10,7 @@ import { Comment } from "../Comment/Comment";
 import { MainButton } from "../MainButton/MainButton";
 
 export const HeroSection = () => {
-  const isMobile = useMediaQuery({
+  const isMobile: boolean = useMediaQuery({
     query: "(max-width: 767px)"
   });
 

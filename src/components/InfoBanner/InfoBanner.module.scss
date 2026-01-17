@@ -1,0 +1,36 @@
+@use "../../styles/variables" as v;
+
+.infoBanner {
+  background-color: v.$light-gray--100;
+  padding: 5rem 4rem;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3.8rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: v.$blue--400;
+    text-align: center;
+
+    @media (width >= 1024px) {
+      color: v.$blue--700;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2.4rem;
+
+    @media (width >= 1024px) {
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+}

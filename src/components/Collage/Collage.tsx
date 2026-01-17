@@ -13,7 +13,7 @@ export const Collage = (props: Props) => {
     return null;
   }
 
-  const firstThreeImages = images.slice(0, imagesCount);
+  const firstThreeImages: string[] = images.slice(0, imagesCount);
 
   return (
     <div className={styles.collage}>

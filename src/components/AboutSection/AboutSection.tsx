@@ -5,8 +5,8 @@ import hero02 from "../../assets/images/hero02.webp";
 import hero04 from "../../assets/images/hero04.webp";
 import { Container } from "../Container/Container";
 import styles from "./AboutSection.module.scss";
-import { content } from "./staticContent";
 import { AboutSectionContent } from "./AboutSectionContent";
+import { content } from "./staticContent";
 
 type Props = {
   leftImg?: string;
@@ -30,7 +30,7 @@ export const AboutSection = memo((props: Props) => {
   });
 
   return (
-    <div className={styles.aboutSection}>
+    <section className={styles.aboutSection}>
       <Container>
         <div className={styles.aboutSection__wrapper}>
           <div className={styles.aboutSection__gallery}>
@@ -51,6 +51,6 @@ export const AboutSection = memo((props: Props) => {
           )}
         </div>
       </Container>
-    </div>
+    </section>
   );
 });

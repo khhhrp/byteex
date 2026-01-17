@@ -19,7 +19,7 @@ export const BenefitsSection = (props: Props) => {
   const [slideIndexImages, setSlideIndexImages] = useState(0);
   const img: string = images[slideIndexImages];
 
-  const isMobile = useMediaQuery({
+  const isMobile: boolean = useMediaQuery({
     query: "(max-width: 767px)"
   });
 

@@ -1,0 +1,100 @@
+@use "../../styles/variables" as v;
+
+.accordionItem {
+  $root: &;
+  border: none;
+  background-color: transparent;
+  padding-inline: 0;
+  font-family: inherit;
+  text-align: start;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 0fr;
+  transition: grid-template-rows 250ms ease;
+  padding-block: 2.5rem;
+  border-top: 0.1rem solid v.$light-gray--400;
+
+  &:last-child {
+    border-bottom: 0.1rem solid v.$light-gray--400;
+  }
+
+  @media (hover: hover) {
+    cursor: pointer;
+  }
+
+  &_open {
+    grid-template-rows: auto 1fr;
+
+    #{$root} {
+      &__decor {
+        &::before {
+          rotate: -180deg;
+        }
+
+        &::after {
+          rotate: -90deg;
+        }
+      }
+
+      &__text {
+        translate: 0 0;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2rem;
+    font-size: 1.8rem;
+    color: v.$blue--900;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    margin-bottom: 1rem;
+  }
+
+  &__decor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 3rem;
+    aspect-ratio: 1;
+    padding-right: 2rem;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: v.$blue--900;
+      transition: rotate 250ms ease;
+    }
+
+    &::before {
+      width: 2rem;
+      height: 0.2rem;
+    }
+
+    &::after {
+      width: 0.2rem;
+      height: 2rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    color: v.$gray--700;
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    overflow: hidden;
+    translate: 0 -5rem;
+    opacity: 0;
+    transition-property: translate, opacity;
+    transition-duration: 250ms;
+    transition-timing-function: ease;
+  }
+}

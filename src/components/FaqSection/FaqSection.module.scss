@@ -1,0 +1,25 @@
+@use "../../styles/variables" as v;
+
+.faqSection {
+  padding-block: 5rem;
+
+  &__title {
+    font-size: 2.6rem;
+    color: v.$blue--700;
+    text-transform: lowercase;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6rem;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4rem;
+  }
+}

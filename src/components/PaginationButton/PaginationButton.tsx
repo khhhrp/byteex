@@ -1,9 +1,10 @@
 import { motion } from "motion/react";
-import styles from "./PaginationButton.module.scss";
 import { memo } from "react";
-import type { CallBack } from "../..";
+import type { ButtonType, CallBack } from "../..";
+import styles from "./PaginationButton.module.scss";
 
 type Props = {
+  type?: ButtonType;
   src: string;
   isActive: boolean;
   id: string | number;
@@ -11,11 +12,11 @@ type Props = {
 };
 
 export const PaginationButton = memo((props: Props) => {
-  const { onClick, src, isActive, id } = props;
+  const { type = "button", onClick, src, isActive, id } = props;
 
   return (
     <button
-      type="button"
+      type={type}
       data-id={`item-${id}`}
       onClick={onClick}
       className={styles.paginationButton}
