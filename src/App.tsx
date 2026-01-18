@@ -22,8 +22,8 @@ export const App = () => {
       <HeroSection />
       <BenefitsSection />
       <AboutSection />
-      <InfoBanner />
       <FaqSection />
+      <InfoBanner />
     </>
   );
 };

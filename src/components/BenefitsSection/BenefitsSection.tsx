@@ -20,7 +20,7 @@ export const BenefitsSection = (props: Props) => {
   const img: string = images[slideIndexImages];
 
   const isMobile: boolean = useMediaQuery({
-    query: "(max-width: 767px)"
+    query: "(max-width: 1023px)"
   });
 
   return (
@@ -29,9 +29,26 @@ export const BenefitsSection = (props: Props) => {
         <div className={styles.benefitsSection__background} />
         <h3 className={styles.benefitsSection__subtitle}>as seen in</h3>
         <div className={styles.benefitsSection__content}>
-          <h2 className={styles.benefitsSection__title}>
-            Loungewear you can be proud of.
-          </h2>
+          <div className={styles.benefitsSection__inner}>
+            <h2 className={styles.benefitsSection__title}>
+              Loungewear you can be proud of.
+            </h2>
+            <div className={styles.benefitsSection__cards}>
+              {cards.map((item, id) => {
+                const { icon, size, title, text } = item;
+                return (
+                  <div className={styles.benefitsSection__card} key={id}>
+                    <BenefitCard
+                      icon={icon}
+                      size={size}
+                      title={title}
+                      text={text}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
           <div className={styles.benefitsSection__slider}>
             <Slider
               startIndex={1}
@@ -41,22 +58,7 @@ export const BenefitsSection = (props: Props) => {
             >
               <img src={img} alt="" />
             </Slider>
-          </div>
-          <p className={styles.benefitsSection__text}>White Robe</p>
-          <div className={styles.benefitsSection__cards}>
-            {cards.map((item, id) => {
-              const { icon, size, title, text } = item;
-              return (
-                <div className={styles.benefitsSection__card} key={id}>
-                  <BenefitCard
-                    icon={icon}
-                    size={size}
-                    title={title}
-                    text={text}
-                  />
-                </div>
-              );
-            })}
+            <p className={styles.benefitsSection__text}>White Robe</p>
           </div>
           {isMobile && (
             <div className={styles.benefitsSection__actions}>

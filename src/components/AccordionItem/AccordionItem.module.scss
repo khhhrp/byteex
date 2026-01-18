@@ -10,8 +10,8 @@
   width: 100%;
   display: grid;
   grid-template-rows: auto 0fr;
-  transition: grid-template-rows 250ms ease;
-  padding-block: 2.5rem;
+  transition: grid-template-rows 400ms ease;
+  padding-block: 2rem;
   border-top: 0.1rem solid v.$light-gray--400;
 
   &:last-child {
@@ -62,7 +62,7 @@
     position: relative;
     height: 3rem;
     aspect-ratio: 1;
-    padding-right: 2rem;
+    margin-right: 2rem;
     grid-column: 1 / -1;
     grid-row: 1 / 2;
 

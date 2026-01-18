@@ -3,17 +3,92 @@
 .faqSection {
   padding-block: 5rem;
 
+  &__wrapper {
+    @media (width >= 1024px) {
+      max-width: 115rem;
+      margin-inline: auto;
+      display: flex;
+      align-items: start;
+      column-gap: 8.8rem;
+    }
+  }
+
   &__title {
     font-size: 2.6rem;
     color: v.$blue--700;
-    text-transform: lowercase;
     text-align: center;
+
+    @media (width >= 1024px) {
+      text-align: start;
+    }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     row-gap: 6rem;
+
+    @media (width >= 1024px) {
+      row-gap: 5rem;
+    }
+  }
+
+  &__photoBlock {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 37.3913%;
+    aspect-ratio: 0.6666;
+    flex-shrink: 0;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: linear-gradient(to top, v.$beige, rgba(v.$beige, 0.3));
+    }
+
+    &::before {
+      width: 34.6511%;
+      aspect-ratio: 0.7967;
+      top: 6.7rem;
+      left: 3rem;
+    }
+
+    &::after {
+      width: 31.1627%;
+      aspect-ratio: 0.7089;
+      bottom: 12.6rem;
+      right: 5.8rem;
+    }
+  }
+
+  &__topImg,
+  &__bottomImg {
+    position: absolute;
+  }
+
+  &__topImg {
+    top: 0;
+    right: 4.2rem;
+    width: 38.8372%;
+    margin-left: auto;
+  }
+
+  &__mainImg {
+    width: 52.7906%;
+    z-index: 2;
+  }
+
+  &__bottomImg {
+    left: 0;
+    bottom: 4.6rem;
+    width: 50.2325%;
+    margin-right: auto;
+    object-fit: cover;
+    object-position: center;
+    max-height: 16rem;
   }
 
   &__actions {
