@@ -20,6 +20,18 @@
     }
   }
 
+  &__cardsWrapper {
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    & > * {
+      scroll-snap-align: start;
+      flex-basis: 24rem;
+    }
+  }
+
   &__cards {
     display: flex;
     flex-direction: column;
@@ -28,9 +40,7 @@
 
     @media (width >= 1024px) {
       flex-direction: row;
-      align-items: stretch;
       justify-content: center;
-      flex-wrap: wrap;
     }
   }
 }

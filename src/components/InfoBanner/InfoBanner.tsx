@@ -2,7 +2,8 @@ import { useMediaQuery } from "react-responsive";
 import { Container } from "../Container/Container";
 import { InfoCard } from "../InfoCard/InfoCard";
 import styles from "./InfoBanner.module.scss";
-import { infoCards, type InfoCardType } from "./staticContent";
+import { infoCards } from "./staticContent";
+import type { InfoCardType } from "../InfoCard/types";
 
 type Props = {
   cards?: InfoCardType[];
@@ -23,29 +24,31 @@ export const InfoBanner = (props: Props) => {
         <div className={styles.infoBanner__wrapper}>
           <h2 className={styles.infoBanner__title}>Our total green impact</h2>
           <div className={styles.infoBanner__cards}>
-            {isMobile
-              ? firstTwoCards.map((el: InfoCardType, index: number) => {
+            {isMobile ? (
+              firstTwoCards.map((el, index) => {
+                return (
+                  <InfoCard
+                    icon={el.icon}
+                    title={el.title}
+                    description={el.description}
+                    key={index}
+                  />
+                );
+              })
+            ) : (
+              <div className={styles.infoBanner__cardsWrapper}>
+                {cards.map((el, index) => {
                   return (
                     <InfoCard
-                      name={el.icon}
-                      size={el.size}
+                      icon={el.icon}
                       title={el.title}
-                      desc={el.description}
-                      key={index}
-                    />
-                  );
-                })
-              : cards.map((el: InfoCardType, index: number) => {
-                  return (
-                    <InfoCard
-                      name={el.icon}
-                      size={el.size}
-                      title={el.title}
-                      desc={el.description}
+                      description={el.description}
                       key={index}
                     />
                   );
                 })}
+              </div>
+            )}
           </div>
         </div>
       </Container>

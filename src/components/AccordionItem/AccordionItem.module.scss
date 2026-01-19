@@ -10,9 +10,11 @@
   width: 100%;
   display: grid;
   grid-template-rows: auto 0fr;
-  transition: grid-template-rows 400ms ease;
+  transition: grid-template-rows 250ms ease;
   padding-block: 2rem;
   border-top: 0.1rem solid v.$light-gray--400;
+  align-content: start;
+  overflow: hidden;
 
   &:last-child {
     border-bottom: 0.1rem solid v.$light-gray--400;
@@ -37,8 +39,9 @@
       }
 
       &__text {
-        translate: 0 0;
         opacity: 1;
+        translate: 0 0;
+        visibility: visible;
       }
     }
   }
@@ -52,7 +55,7 @@
     color: v.$blue--900;
     grid-column: 1 / -1;
     grid-row: 1 / 2;
-    margin-bottom: 1rem;
+    text-wrap-style: pretty;
   }
 
   &__decor {
@@ -85,16 +88,22 @@
     }
   }
 
-  &__text {
-    font-size: 1.4rem;
-    color: v.$gray--700;
+  &__textBlock {
     grid-column: 1 / -1;
     grid-row: 2 / 3;
-    overflow: hidden;
-    translate: 0 -5rem;
+    min-height: 0;
+  }
+
+  &__text {
+    display: block;
+    font-size: 1.4rem;
+    color: v.$gray--700;
+    padding-top: 2rem;
     opacity: 0;
-    transition-property: translate, opacity;
+    translate: 0 -2rem;
+    transition-property: opacity, visibility, translate;
     transition-duration: 250ms;
     transition-timing-function: ease;
+    visibility: hidden;
   }
 }

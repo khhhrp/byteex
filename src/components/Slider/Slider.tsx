@@ -11,12 +11,14 @@ import { Icon } from "../Icon/Icon";
 import styles from "./Slider.module.scss";
 import { getSlide } from "./utils";
 import { PaginationButton } from "../PaginationButton/PaginationButton";
+import type { ProductCardType } from "../ProductWorkSection/staticContent";
 
 type Props = {
-  items: string[];
+  items: string[] | ProductCardType[];
   startIndex?: number;
   showPagination?: boolean;
   onSlideChange: (index: number) => void;
+  isFixHeight?: boolean;
 } & PropsWithChildren;
 
 export const Slider = memo((props: Props) => {
@@ -25,7 +27,8 @@ export const Slider = memo((props: Props) => {
     startIndex = 0,
     showPagination = false,
     onSlideChange,
-    children
+    children,
+    isFixHeight = false
   } = props;
 
   const id = useId();
@@ -47,7 +50,13 @@ export const Slider = memo((props: Props) => {
 
   return (
     <div className={styles.slider}>
-      <div className={styles.slider__main}>{children}</div>
+      <div
+        className={cx(styles.slider__main, {
+          [styles.slider__main_fixH]: isFixHeight
+        })}
+      >
+        {children}
+      </div>
       <button
         type="button"
         onClick={onNextButtonClick}
@@ -65,17 +74,19 @@ export const Slider = memo((props: Props) => {
       {showPagination && (
         <div className={styles.slider__pagintation}>
           {items.map((el, index) => {
-            return (
-              <PaginationButton
-                key={index}
-                isActive={index === slideIndex}
-                onClick={() => {
-                  setSlideIndex(index);
-                }}
-                src={el}
-                id={id}
-              />
-            );
+            if (typeof el === "string") {
+              return (
+                <PaginationButton
+                  key={index}
+                  isActive={index === slideIndex}
+                  onClick={() => {
+                    setSlideIndex(index);
+                  }}
+                  src={el}
+                  id={id}
+                />
+              );
+            }
           })}
         </div>
       )}

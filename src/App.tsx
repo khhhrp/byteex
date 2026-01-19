@@ -7,6 +7,8 @@ import { InfoBanner } from "./components/InfoBanner/InfoBanner";
 import { SvgSprite } from "./components/SvgSprite/SvgSprite";
 import { getContent } from "./components/TopBanner/staticContent";
 import { TopBanner } from "./components/TopBanner/TopBanner";
+import { ProductWorkSection } from "./components/ProductWorkSection/ProductWorkSection";
+import { Footer } from "./components/Footer/Footer";
 
 export const App = () => {
   const isMobile = useMediaQuery({
@@ -22,8 +24,10 @@ export const App = () => {
       <HeroSection />
       <BenefitsSection />
       <AboutSection />
+      <ProductWorkSection />
       <FaqSection />
       <InfoBanner />
+      <Footer />
     </>
   );
 };

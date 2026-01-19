@@ -6,8 +6,7 @@ import styles from "./AccordionItem.module.scss";
 type Props = {
   title: string;
   text: string;
-  type?: ButtonType;
-};
+} & ButtonType;
 
 export const AccordionItem = memo((props: Props) => {
   const { title, text, type = "button" } = props;
@@ -30,7 +29,9 @@ export const AccordionItem = memo((props: Props) => {
         {title}
         <span className={styles.accordionItem__decor}></span>
       </span>
-      <span className={styles.accordionItem__text}>{text}</span>
+      <span className={styles.accordionItem__textBlock}>
+        <span className={styles.accordionItem__text}>{text}</span>
+      </span>
     </button>
   );
 });

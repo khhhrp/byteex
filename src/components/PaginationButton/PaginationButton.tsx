@@ -4,12 +4,11 @@ import type { ButtonType, CallBack } from "../..";
 import styles from "./PaginationButton.module.scss";
 
 type Props = {
-  type?: ButtonType;
   src: string;
   isActive: boolean;
   id: string | number;
   onClick: CallBack;
-};
+} & ButtonType;
 
 export const PaginationButton = memo((props: Props) => {
   const { type = "button", onClick, src, isActive, id } = props;

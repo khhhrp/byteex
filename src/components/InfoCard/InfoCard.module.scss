@@ -1,18 +1,13 @@
 @use "../../styles/variables" as v;
 
 .infoCard {
+  $root: &;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 1.2rem;
   width: 100%;
-  padding-bottom: 2.4rem;
-  border-bottom: 0.1rem solid rgba(v.$gray--300, 0.5);
-  flex-shrink: 0;
+  align-items: center;
 
   @media (width >= 1024px) {
-    padding-bottom: 0;
-    border-bottom: none;
-    flex-basis: 24rem;
     padding-inline: 1rem;
 
     &:not(:last-child) {
@@ -24,35 +19,66 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 4.2rem;
     aspect-ratio: 1;
     border-radius: 50%;
-    background-color: v.$light-gray--400;
-    color: v.$purple;
-    margin-bottom: 1.3rem;
     flex-shrink: 0;
-
-    @media (width >= 1024px) {
-      color: v.$blue--400;
-    }
-  }
-
-  &__title {
-    font-size: 2.2rem;
-    font-weight: 600;
   }
 
   &__description {
     font-size: 1.4rem;
   }
 
-  &__title,
-  &__description {
-    text-align: center;
-    color: v.$blue--400;
+  &_default {
+    flex-direction: column;
+    padding-bottom: 2.4rem;
+    border-bottom: 0.1rem solid rgba(v.$gray--300, 0.5);
+    flex-shrink: 0;
 
     @media (width >= 1024px) {
-      color: v.$blue--700;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    #{$root} {
+      &__icon {
+        width: 4.2rem;
+        background-color: v.$light-gray--400;
+        color: v.$purple;
+
+        @media (width >= 1024px) {
+          color: v.$blue--400;
+        }
+      }
+
+      &__title {
+        font-size: 2.2rem;
+        font-weight: 600;
+      }
+
+      &__title,
+      &__description {
+        text-align: center;
+        color: v.$blue--400;
+
+        @media (width >= 1024px) {
+          color: v.$blue--700;
+        }
+      }
+    }
+  }
+
+  &_minimal {
+    #{$root} {
+      &__icon {
+        width: 3.3rem;
+        background-color: rgba(v.$gray--800, 0.1);
+        color: v.$gray--700;
+        padding: 0.5rem;
+      }
+
+      &__description {
+        color: v.$gray--700;
+      }
     }
   }
 }

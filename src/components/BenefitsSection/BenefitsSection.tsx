@@ -55,6 +55,7 @@ export const BenefitsSection = (props: Props) => {
               onSlideChange={(index) => setSlideIndexImages(index)}
               items={images}
               showPagination
+              isFixHeight={true}
             >
               <img src={img} alt="" />
             </Slider>
