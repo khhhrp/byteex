@@ -53,9 +53,8 @@ export const Footer = (props: Props) => {
                   </div>
                   <p className={styles.footer__infoText}>Ships in 1-2 Days</p>
                 </div>
-                <div className={styles.footer__infoPicture}>
-                  <img src={src} alt="" />
-                </div>
+
+                <img src={src} alt="" className={styles.footer__infoImg} />
               </div>
             )}
             {!isMobile && (

@@ -8,6 +8,7 @@ import { cardsStatic, type Card } from "../BenefitCard/staticContent";
 import { images } from "../Slider/staticContent";
 import { BenefitCard } from "../BenefitCard/BenefitCard";
 import { Slider } from "../Slider/Slider";
+import { LogoSlider } from "../LogoSlider/LogoSlider";
 
 type Props = {
   cards?: Card[];
@@ -28,6 +29,7 @@ export const BenefitsSection = (props: Props) => {
       <Container>
         <div className={styles.benefitsSection__background} />
         <h3 className={styles.benefitsSection__subtitle}>as seen in</h3>
+        <LogoSlider />
         <div className={styles.benefitsSection__content}>
           <div className={styles.benefitsSection__inner}>
             <h2 className={styles.benefitsSection__title}>

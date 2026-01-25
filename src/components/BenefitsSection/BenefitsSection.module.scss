@@ -52,6 +52,7 @@
 
     @media (width >=768px) {
       font-size: 2rem;
+      padding-bottom: 3.2rem;
     }
   }
 
@@ -118,9 +119,11 @@
     row-gap: 2.5rem;
     column-gap: 2.5rem;
     justify-content: space-between;
+    margin-top: 4.2rem;
 
     @media (width >=1024px) {
       flex-direction: row;
+      margin-top: 10rem;
     }
   }
 
