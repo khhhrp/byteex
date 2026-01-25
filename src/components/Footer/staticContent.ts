@@ -1,4 +1,5 @@
 import type { InfoCardType } from "../InfoCard/types";
+import payments from "../../assets/images/payments.webp";
 
 export const footerInfoCards: InfoCardType[] = [
   {
@@ -14,3 +15,5 @@ export const footerInfoCards: InfoCardType[] = [
     description: "Made ethically and responsibly."
   }
 ];
+
+export const infoImg = payments;

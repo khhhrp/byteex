@@ -1,11 +1,13 @@
 @use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
 
 .infoCard {
   $root: &;
   display: flex;
   gap: 1.2rem;
-  width: 100%;
+  flex: 0 0 33.3333%;
   align-items: center;
+  text-wrap-style: balance;
 
   @media (width >= 1024px) {
     padding-inline: 1rem;
@@ -25,6 +27,7 @@
   }
 
   &__description {
+    @include m.line-clamp(3);
     font-size: 1.4rem;
   }
 
