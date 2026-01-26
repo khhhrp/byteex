@@ -16,7 +16,8 @@ type Ref = {
 const defaultSettings = {
   infinite: true,
   speed: 500,
-  arrows: false
+  arrows: false,
+  accessibility: false
 };
 
 const settingsMobile = {

@@ -1,10 +1,12 @@
 @use "../../styles/variables" as v;
 
 .reviewSlider {
+  --margin: 3rem;
   position: relative;
 
   @media (width >= 1024px) {
     padding-inline: 8rem;
+    --margin: 6rem;
   }
 
   &__dots {
@@ -50,7 +52,7 @@
 
   &__button {
     position: absolute;
-    top: 50%;
+    top: calc(50% - var(--margin) / 2);
     translate: 0 -50%;
 
     &_left {
@@ -63,11 +65,7 @@
   }
 
   :global(.slick-track) {
-    margin-bottom: 3rem;
-
-    @media (width >= 1024px) {
-      margin-bottom: 6rem;
-    }
+    margin-bottom: var(--margin);
   }
 
   :global(.slick-list) {

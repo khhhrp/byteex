@@ -1,11 +1,9 @@
-import styles from "./MainButton.module.scss";
-import { Icon } from "../Icon/Icon";
 import { memo, type PropsWithChildren } from "react";
+import { Icon } from "../Icon/Icon";
+import styles from "./MainButton.module.scss";
 import type { ButtonType } from "../..";
 
-type Props = {
-  type?: ButtonType;
-} & PropsWithChildren;
+type Props = PropsWithChildren & ButtonType;
 
 export const MainButton = memo((props: Props) => {
   const { type = "button", children = "Customize Your Outfit" } = props;
