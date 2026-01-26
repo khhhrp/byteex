@@ -57,11 +57,11 @@ export const ReviewsSection = (props: Props) => {
       </div>
       <Container>
         <ReviewSlider />
+        <div className={styles.reviewsSection__actions}>
+          <MainButton />
+          <RatingInfo />
+        </div>
       </Container>
-      <div className={styles.reviewsSection__actions}>
-        <MainButton />
-        <RatingInfo />
-      </div>
     </section>
   );
 };

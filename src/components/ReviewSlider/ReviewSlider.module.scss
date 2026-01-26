@@ -52,7 +52,7 @@
 
   &__button {
     position: absolute;
-    top: calc(50% - var(--margin) / 2);
+    top: 50%;
     translate: 0 -50%;
 
     &_left {
@@ -64,11 +64,8 @@
     }
   }
 
-  :global(.slick-track) {
-    margin-bottom: var(--margin);
-  }
-
   :global(.slick-list) {
+    padding-block: var(--margin);
     mask-image: linear-gradient(
       to right,
       transparent,
