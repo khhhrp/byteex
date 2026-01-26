@@ -8,10 +8,10 @@ import {
   type PropsWithChildren
 } from "react";
 import { Icon } from "../Icon/Icon";
-import styles from "./Slider.module.scss";
-import { getSlide } from "./utils";
 import { PaginationButton } from "../PaginationButton/PaginationButton";
 import type { ProductCardType } from "../ProductWorkSection/staticContent";
+import styles from "./Slider.module.scss";
+import { getSlide } from "./utils";
 
 type Props = {
   items: string[] | ProductCardType[];
@@ -62,14 +62,14 @@ export const Slider = memo((props: Props) => {
         onClick={onNextButtonClick}
         className={cx(styles.slider__btn, styles.slider__btn_next)}
       >
-        <Icon name="carrot-right" size="15" />
+        <Icon name="caret-right" size="15" />
       </button>
       <button
         type="button"
         onClick={onPrevButtonClick}
         className={cx(styles.slider__btn, styles.slider__btn_prev)}
       >
-        <Icon name="carrot-left" size="15" />
+        <Icon name="caret-left" size="15" />
       </button>
       {showPagination && (
         <div className={styles.slider__pagintation}>

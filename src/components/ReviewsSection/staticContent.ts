@@ -78,7 +78,55 @@ export type Review = {
   text: string;
 };
 
-export const reviews: Review[] = [
+export const reviewsMobile: Review[] = [
+  {
+    name: "Jane, S.",
+    img: user05,
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales justo. Aenean eget aliquet mi."
+  },
+  {
+    name: "Jane, S.",
+    img: user12,
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales justo. Aenean eget aliquet mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales."
+  },
+  {
+    name: "Jane, S.",
+    img: user18,
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales justo. Aenean eget aliquet mi."
+  }
+];
+
+export const reviewsDesktop: Review[] = [
+  {
+    name: "Jane, S.",
+    img: user05,
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales justo. Aenean eget aliquet mi."
+  },
+  {
+    name: "Jane, S.",
+    img: user12,
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales justo. Aenean eget aliquet mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales."
+  },
+  {
+    name: "Jane, S.",
+    img: user18,
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales justo. Aenean eget aliquet mi."
+  },
+  {
+    name: "Jane, S.",
+    img: user05,
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales justo. Aenean eget aliquet mi."
+  },
+  {
+    name: "Jane, S.",
+    img: user12,
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales justo. Aenean eget aliquet mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales."
+  },
+  {
+    name: "Jane, S.",
+    img: user18,
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin dolor, non sodales justo. Aenean eget aliquet mi."
+  },
   {
     name: "Jane, S.",
     img: user05,

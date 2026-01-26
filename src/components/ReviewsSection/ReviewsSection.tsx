@@ -1,19 +1,21 @@
 import { useMediaQuery } from "react-responsive";
 import { Container } from "../Container/Container";
-import styles from "./ReviewsSection.module.scss";
-import {
-  reviews,
-  usersDesktopL,
-  usersDesktopM,
-  usersMobile
-} from "./staticContent";
 import { MainButton } from "../MainButton/MainButton";
 import { RatingInfo } from "../RatingInfo/RatingInfo";
-import { Review } from "../Review/Review";
+import { ReviewSlider } from "../ReviewSlider/ReviewSlider";
+import styles from "./ReviewsSection.module.scss";
+import { usersDesktopL, usersDesktopM, usersMobile } from "./staticContent";
+import type { CSSProperties } from "react";
 
 type Props = {
   title?: string;
   text?: string;
+};
+
+const getGridItems = (isMobile: boolean, isLargeScreen: boolean) => {
+  if (isMobile) return usersMobile;
+  if (isLargeScreen) return usersDesktopL;
+  return usersDesktopM;
 };
 
 export const ReviewsSection = (props: Props) => {
@@ -30,7 +32,8 @@ export const ReviewsSection = (props: Props) => {
     query: "(min-width: 1440px)"
   });
 
-  const isMediumScreen = !isMobile && !isLargeScreen;
+  const items = getGridItems(isMobile, isLargeScreen);
+  const itemsCount = items.length / 2;
 
   return (
     <section className={styles.reviewsSection}>
@@ -40,46 +43,21 @@ export const ReviewsSection = (props: Props) => {
           <p className={styles.reviewsSection__text}>{text}</p>
         </div>
       </Container>
-      {isMobile && (
-        <div className={styles.reviewsSection__grid}>
-          {usersMobile.map((el, index) => {
-            return (
-              <div className={styles.reviewsSection__cell} key={index}>
-                <img src={el} alt="" />
-              </div>
-            );
-          })}
-        </div>
-      )}
-      {isMediumScreen && (
-        <div className={styles.reviewsSection__grid}>
-          {usersDesktopM.map((el, index) => {
-            return (
-              <div className={styles.reviewsSection__cell} key={index}>
-                <img src={el} alt="" />
-              </div>
-            );
-          })}
-        </div>
-      )}
-      {isLargeScreen && (
-        <div className={styles.reviewsSection__grid}>
-          {usersDesktopL.map((el, index) => {
-            return (
-              <div className={styles.reviewsSection__cell} key={index}>
-                <img src={el} alt="" />
-              </div>
-            );
-          })}
-        </div>
-      )}
-      <div className={styles.reviewsSection__slider}>
-        {reviews.map((el, index) => {
+      <div
+        className={styles.reviewsSection__grid}
+        style={{ "--items-count": itemsCount } as CSSProperties}
+      >
+        {items.map((el, index) => {
           return (
-            <Review key={index} name={el.name} img={el.img} text={el.text} />
+            <div className={styles.reviewsSection__cell} key={index}>
+              <img src={el} alt="" />
+            </div>
           );
         })}
       </div>
+      <Container>
+        <ReviewSlider />
+      </Container>
       <div className={styles.reviewsSection__actions}>
         <MainButton />
         <RatingInfo />

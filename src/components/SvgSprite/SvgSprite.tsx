@@ -29,7 +29,7 @@ export const SvgSprite = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 10 18"
-        id="carrot-left"
+        id="caret-left"
       >
         <path
           d="M8.3147 16.0405L0.999956 8.72775L8.3147 1.4142"
@@ -43,7 +43,7 @@ export const SvgSprite = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 10 18"
-        id="carrot-right"
+        id="caret-right"
       >
         <path
           d="M1.41418 16.0405L8.72893 8.72775L1.41418 1.4142"

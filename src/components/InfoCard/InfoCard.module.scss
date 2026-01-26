@@ -8,6 +8,7 @@
   flex: 0 0 33.3333%;
   align-items: center;
   text-wrap-style: balance;
+  width: 100%;
 
   @media (width >= 1024px) {
     padding-inline: 1rem;
@@ -36,6 +37,14 @@
     padding-bottom: 2.4rem;
     border-bottom: 0.1rem solid rgba(v.$gray--300, 0.5);
     flex-shrink: 0;
+
+    @media (width >= 768px) {
+      border-bottom: none;
+
+      &:not(:last-child) {
+        border-right: 0.1rem solid rgba(v.$gray--300, 0.5);
+      }
+    }
 
     @media (width >= 1024px) {
       padding-bottom: 0;
@@ -71,6 +80,10 @@
   }
 
   &_minimal {
+    &:not(:last-child) {
+      border-right: 0.1rem solid rgba(v.$gray--300, 0.5);
+    }
+
     #{$root} {
       &__icon {
         width: 3.3rem;
