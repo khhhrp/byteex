@@ -1,6 +1,6 @@
 .container {
   width: min(100%, 134rem);
   margin-inline: auto;
-  padding-left: env(safe-area-inset-left, 2rem);
-  padding-right: env(safe-area-inset-right, 2rem);
+  padding-left: max(env(safe-area-inset-left), 2rem);
+  padding-right: max(env(safe-area-inset-left), 2rem);
 }
