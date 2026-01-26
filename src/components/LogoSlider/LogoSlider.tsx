@@ -2,6 +2,7 @@ import { useMediaQuery } from "react-responsive";
 import Slider from "react-slick";
 import styles from "./LogoSlider.module.scss";
 import { logosDesktop, logosMobile } from "./staticContent";
+import { memo } from "react";
 
 const settings = {
   dots: true,
@@ -10,11 +11,10 @@ const settings = {
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 3,
-  nextArrow: <></>,
-  prevArrow: <></>
+  arrows: false
 };
 
-export const LogoSlider = () => {
+export const LogoSlider = memo(() => {
   const isMobile = useMediaQuery({
     query: "(max-width: 1023px)"
   });
@@ -45,4 +45,4 @@ export const LogoSlider = () => {
       )}
     </div>
   );
-};
+});

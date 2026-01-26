@@ -1,0 +1,64 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.review {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  width: min(100%, 33.8rem);
+  border: 0.1rem solid v.$light-gray--500;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 1rem 0.1rem rgba(v.$dark, 0.08);
+  margin-inline: auto;
+  padding: 2.6rem 3.2rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: 1.2rem;
+  }
+
+  &__avatar {
+    width: 3.6rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: v.$light-gray--500;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.2rem;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    column-gap: 0.2rem;
+    line-height: 1;
+    color: v.$yellow;
+  }
+
+  &__name {
+    @include m.line-clamp(2);
+    font-size: 1.5rem;
+  }
+
+  &__name,
+  &__text {
+    color: v.$gray--700;
+  }
+
+  &__text {
+    font-size: 1.2rem;
+  }
+}

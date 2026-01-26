@@ -9,6 +9,7 @@ import { getContent } from "./components/TopBanner/staticContent";
 import { TopBanner } from "./components/TopBanner/TopBanner";
 import { ProductWorkSection } from "./components/ProductWorkSection/ProductWorkSection";
 import { Footer } from "./components/Footer/Footer";
+import { ReviewsSection } from "./components/ReviewsSection/ReviewsSection";
 
 export const App = () => {
   const isMobile = useMediaQuery({
@@ -25,6 +26,7 @@ export const App = () => {
       <BenefitsSection />
       <AboutSection />
       <ProductWorkSection />
+      <ReviewsSection />
       <FaqSection />
       <InfoBanner />
       <Footer />
